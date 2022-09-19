@@ -1,0 +1,135 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyNmcKUwe8ywKWvU6hpkCuPp",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/Paoloruizq5/Prigrama-new/blob/main/Examen\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 1,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "6tHvMaxOfSlD",
+        "outputId": "e6efcec8-5c35-4193-bf6d-7e22da837e6e"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "opcion 1 entregar comidas\n",
+            "opcion 2 Capturar comida\n",
+            "opcion 3 Capturar bebida\n",
+            "opcion 4 Captursr postre\n",
+            "Ingresa la opcion: 1\n",
+            "ingresa el nombre: Paolo\n",
+            "no hay comida disponible\n",
+            "No hay bebidas disponibles \n",
+            "No hay postres disponibles \n",
+            "[['Paolo']]\n",
+            "Adios\n",
+            "Ingresa la opcion: 3\n",
+            "ingresa la bebida disponible Agua\n",
+            "['Agua']\n",
+            "Adios\n",
+            "Ingresa la opcion: 4\n",
+            "Ingresa los postres disponibles: Flan\n",
+            "['Flan']\n",
+            "Ingresa la opcion: 5\n",
+            "Adios\n"
+          ]
+        }
+      ],
+      "source": [
+        "op = 0\n",
+        "comida = []\n",
+        "bebidas = []\n",
+        "postres = [] \n",
+        "clientes = []\n",
+        "entregas = []\n",
+        "l = []\n",
+        "print(\"opcion 1 entregar comidas\")\n",
+        "print(\"opcion 2 Capturar comida\")\n",
+        "print(\"opcion 3 Capturar bebida\")\n",
+        "print(\"opcion 4 Captursr postre\")\n",
+        "def menu(op):\n",
+        "    while op!=5:\n",
+        "        op = int(input(\"Ingresa la opcion: \"))\n",
+        "        l = []\n",
+        "        if op == 1:\n",
+        "            entregarH(l,entregas)\n",
+        "        if op == 2:\n",
+        "            entregarF(comida)\n",
+        "        if op ==3:\n",
+        "            entregarT(bebidas)\n",
+        "        if op ==4:\n",
+        "            entregarK(postres)\n",
+        "        else:\n",
+        "            print(\"Adios\")\n",
+        "\n",
+        "def entregarH(l,entregas):\n",
+        "    clientes.append(input(\"ingresa el nombre: \"))\n",
+        "    try:\n",
+        "        l.append(comida.pop(0))\n",
+        "    except:\n",
+        "        print(\"no hay comida disponible\")\n",
+        "    try:\n",
+        "        l.append(bebidas.pop())\n",
+        "    except:\n",
+        "        print(\"No hay bebidas disponibles \")\n",
+        "    try:\n",
+        "        l.append(postres.pop())\n",
+        "    except:\n",
+        "        print(\"No hay postres disponibles \")\n",
+        "    l.append(clientes[-1])\n",
+        "    entregas.append(l)\n",
+        "    print(entregas)\n",
+        "\n",
+        "def entregarF(comida):\n",
+        "    if len(comida)<=4:\n",
+        "        comida.appedn(input(\"Ingresa la comida disponible: \"))\n",
+        "        print(comida)\n",
+        "    else:\n",
+        "        print(\"Ya no puedes poner mas comida\")\n",
+        "def entregarT(bebidas):\n",
+        "    if len(bebidas)<=4:\n",
+        "        bebidas.append(input(\"ingresa la bebida disponible \"))\n",
+        "        print(bebidas)\n",
+        "    else: \n",
+        "        print(\"Ya no puedes poner mas bebida\")\n",
+        "def entregarK(postres):\n",
+        "    if len(postres)<=4:\n",
+        "        postres.append(input(\"Ingresa los postres disponibles: \"))\n",
+        "        print(postres)\n",
+        "    else:\n",
+        "        print(\"Ya no puedes poner mas postres\")\n",
+        "\n",
+        "menu(op)"
+      ]
+    }
+  ]
+}
