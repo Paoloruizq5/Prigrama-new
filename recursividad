@@ -1,0 +1,61 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyPUy0FSq6ncGuuka1nlfuiQ",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/Paoloruizq5/Prigrama-new/blob/main/recursividad\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "bfzGMnG0Oxq4"
+      },
+      "outputs": [],
+      "source": [
+        "def jugar(intento=1):\n",
+        "  respuesta = input(\"Ingresa un numero del 1 al 1000 \")\n",
+        "  if respuesta > \"567\":\n",
+        "    if intento < 1000:\n",
+        "      print (\"Fallaste Inténtalo de nuevo el numero es menor vas en el intento\", intento,)\n",
+        "      intento +=1\n",
+        "      jugar(intento)\n",
+        "    else:\n",
+        "      print (\"Perdiste\")\n",
+        "  if respuesta < \"567\":\n",
+        "    if intento < 1000:\n",
+        "      print(\"Fallaste Intentalo de nuevo el numero es mayor vas en el\",intento)\n",
+        "      intento +=1\n",
+        "      jugar(intento)\n",
+        "    else:\n",
+        "      print(\"Perdiste\")\n",
+        "  else:\n",
+        "      print (\"Ganaste\")\n",
+        "      print(\"Has hecho\",intento,\"intentos\")\n",
+        "jugar()\n",
+        "\n"
+      ]
+    }
+  ]
+}
